@@ -5,8 +5,8 @@ extern crate antidote;
 #[macro_use]
 extern crate error_chain;
 extern crate futures;
-extern crate tokio_core;
 extern crate telegram_bot_raw;
+extern crate tokio_core;
 
 #[cfg(feature = "curl_connector")]
 extern crate curl;
@@ -29,9 +29,10 @@ pub mod prelude;
 pub mod types;
 
 pub use self::api::{Api, Config};
-pub use connector::*;
 pub use self::errors::{Error, ErrorKind};
 pub use self::future::TelegramFuture;
-pub use stream::UpdatesStream;
+pub use connector::*;
 pub use prelude::*;
+pub use stream::UpdatesStream;
+pub use telegram_bot_raw::TELEGRAM_URL;
 pub use types::*;

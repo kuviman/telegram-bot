@@ -12,7 +12,9 @@ impl RequestUrl {
 
     pub fn url(&self, token: &str) -> String {
         match self {
-            &RequestUrl::Method(method) => format!("{}bot{}/{}", TELEGRAM_URL, token, method),
+            &RequestUrl::Method(method) => {
+                format!("{}bot{}/{}", unsafe { TELEGRAM_URL }, token, method)
+            }
         }
     }
 }
@@ -40,5 +42,5 @@ pub struct HttpRequest {
 
 #[derive(Debug, Clone, PartialEq, PartialOrd, Eq, Ord, Hash)]
 pub struct HttpResponse {
-    pub body: Option<Vec<u8>>
+    pub body: Option<Vec<u8>>,
 }

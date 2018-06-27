@@ -1,1 +1,1 @@
-pub const TELEGRAM_URL: &'static str = "https://api.telegram.org/";
+pub static mut TELEGRAM_URL: &'static str = "https://api.telegram.org/";
